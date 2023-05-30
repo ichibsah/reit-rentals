@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %} | website</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'website:home' %}">Home</a> |
+            <a href="{% url 'website:details' %}">details</a> |
+            <a href="{% url 'website:newsletter' %}">Anagram Game</a> |
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'website:home' %}">Log Out</a> |
+                <a href="{% url 'website:details' %}">Reset Password</a>
+          {% else %}
+                <a href="{% url 'website:newsletter' %}">Log In</a> |
+                <a href="{% url 'website:home' %}">Sign Up</a>
+          {% endif %}
+
+        </nav>
+    </header>
+    {% block main %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+
+</body>
+</html>

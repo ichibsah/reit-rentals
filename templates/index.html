@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+{% comment %} 
+{% static 'website/contact/ css/animate.css' %}
+:url({%  static 'website/images/about.jpg'%});"
+{% url 'website:home' %} 
+{% endcomment %}
+<html>
+	<head>
+		<title>Dimension by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'website/home/assets/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'website/contact/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'website/contact/assets/css/noscript.css' %}" /></noscript>
+
+		
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="keywords">
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="description">
+		<meta property="og:title" content="Rentals @ REITs in Ghana" />
+		<meta property="og:description" content="Rentals @ REITs in Ghana" />
+		<meta property="og:url" content="https://rentals.reits-gh.com/" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:image" content="https://rentals.reits-gh.com/logo.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="REITs Ghana" />
+	
+		<!-- Favicon -->
+		<link href="{% static 'website/home/images/favicon.ico' %}" rel="icon">
+	
+	</head>
+	<body class="is-preload">
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'website:home' %}">{{cName}} <span>{{cSlogan}}</span></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			  </button>
+			  <div class="collapse navbar-collapse" id="ftco-nav">
+				{% block navigation %}
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="{% url 'website:home' %}" class="nav-link">Rentals</a></li>
+					{% comment %}
+					<li class="nav-item"><a href="{% url 'website:details' %}" class="nav-link">Über uns</a></li>
+					<li class="nav-item"><a href="{% url 'website:details' %}" class="nav-link">Dienstleistung</a></li>
+					<li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+					<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> 
+					{% endcomment %}
+					<li class="nav-item"><a href="{% url 'website:newsletter' %}" class="nav-link">Newsletters</a></li>
+					  <li class="nav-item active"><a href="{% url 'website:contact' %}" class="nav-link">Contact</a></li>
+				</ul>
+				{% endblock navigation %}
+			  </div>
+			</div>
+		  </nav>
+		
+		<!-- END nav -->
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					{% comment %} <header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Dimension</h1>
+								<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
+								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header> {% endcomment %}
+
+				<!-- Main -->
+					<div id="main" style="display: active;">
+
+						<!-- Contact -->
+							<article id="contact" class="active" style="display: active;">
+								<h2 class="major">Contact</h2>
+								
+								<form method="post" action="#">
+									{% csrf_token %}
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" name="singup" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{% static 'website/contact/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'website/contact/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'website/contact/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'website/contact/assets/js/util.js' %}"></script>
+			{% comment %} <script src="{% static 'website/contact/assets/js/main.js' %}"></script> {% endcomment %}
+
+	</body>
+</html>

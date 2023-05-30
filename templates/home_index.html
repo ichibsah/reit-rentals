@@ -1,0 +1,197 @@
+{% load static %}
+
+{% comment %} 
+{% static 'website/home/ css/animate.css' %}
+:url({%  static 'website/images/about.jpg'%});"
+{% url 'website:home' %} 
+{% endcomment %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Rentals @ REITs in Ghana</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'website/home/assets/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'website/home/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'website/home/assets/css/noscript.css' %}" /></noscript>
+
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="keywords">
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="description">
+		<meta property="og:title" content="Rentals @ REITs in Ghana" />
+		<meta property="og:description" content="Rentals @ REITs in Ghana" />
+		<meta property="og:url" content="https://rentals.reits-gh.com/" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:image" content="https://rentals.reits-gh.com/logo.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="REITs Ghana" />
+	
+		<!-- Favicon -->
+		<link href="{% static 'website/home/images/favicon.ico' %}" rel="icon">
+	</head>
+	<body class="is-preload">
+
+		<div class="wrap">
+			<div class="container">
+				<div class="row justify-content-between">
+						<div class="col-12 col-md d-flex align-items-center">
+							<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">{{cTel}}</a> oder <span class="mailus">email:</span> <a href="mailto://{{cEmail}}">{{cEmail}}</a></p>
+						</div>
+						{% comment %} 
+						<div class="col-12 col-md d-flex justify-content-md-end">
+							<div class="social-media">
+				    		<p class="mb-0 d-flex">
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+				    		</p>
+			        	</div>
+						{% endcomment %}
+						</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="{% url 'website:home' %}">{{cName}} <span>{{cSlogan}}</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+            {% block navigation %}
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item active"><a href="{% url 'website:home' %}" class="nav-link">Rentals</a></li>
+	        	{% comment %}
+				<li class="nav-item"><a href="{% url 'website:details' %}" class="nav-link">Über uns</a></li>
+	        	<li class="nav-item"><a href="{% url 'website:details' %}" class="nav-link">Dienstleistung</a></li>
+	        	<li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+	        	<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> 
+				{% endcomment %}
+				<li class="nav-item"><a href="{% url 'website:contact' %}" class="nav-link">Newsletters</a></li>
+	          	<li class="nav-item"><a href="{% url 'website:contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+            {% endblock navigation %}
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+
+						<!-- Items -->
+							<div class="items">
+
+								<div class="item intro span-2">
+									<h1>Rentals @ REITs in Ghana</h1>
+									<p>Real Estate Investment Trusts<br />
+									Allows anyone to invest in real estate</p>
+								</div>
+
+								<article class="item thumb span-1">
+									<h2>Get listed</h2>
+									<a href="{% static 'website/home/images/fulls/01.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/01.jpg' %}" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>Spintext Road, Near KFC</h2>
+									{% comment %} <a href="{% url 'website:details' %} " class="image"><img src="{% static 'website/home/images/thumbs/09.jpg' %}" alt=""></a> {% endcomment %}
+									<a href="{% url 'website:details' %} " ><img src="{% static 'website/home/images/thumbs/09.jpg' %}" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>Get listed.</h2>
+									<a href="{% static 'website/home/images/fulls/03.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/03.jpg' %}" alt=""></a>
+								</article>
+
+								{% comment %}
+								<article class="item thumb span-1">
+									<h2>Elysium</h2>
+									<a href="{% static 'website/home/images/fulls/04.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/04.jpg' %}" alt=""></a>
+								</article> 
+								
+								<article class="item thumb span-3">
+									<h2>Kingdom of the Wind</h2>
+									<a href="{% static 'website/home/images/fulls/05.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/05.jpg' %}" alt=""></a>
+								</article>
+
+								<article class="item thumb span-1">
+									<h2>The Pursuit</h2>
+									<a href="{% static 'website/home/images/fulls/06.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/06.jpg' %}" alt=""></a>
+								</article> 
+								
+								<article class="item thumb span-2">
+									<h2>Boundless</h2>
+									<a href="{% static 'website/home/images/fulls/07.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/07.jpg' %}" alt=""></a>
+								</article>
+
+								<article class="item thumb span-2">
+									<h2>The Spectators</h2>
+									<a href="{% static 'website/home/images/fulls/08.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/08.jpg' %}" alt=""></a>
+								</article> 
+								{% endcomment %}
+
+							</div>
+
+						<!-- Items -->
+							<div class="items">
+
+								<a href="{% url 'website:newsletter' %}">
+								<article class="item thumb span-3"><h2>Click here...</h2>
+									{% comment %} <a href="{% static 'website/home/images/fulls/05.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/05.jpg' %}" alt=""></a> {% endcomment %}
+									
+									<h1>Click here to get notified on new listings</h1>
+									
+								</article></a>
+								<article class="item thumb span-1"><h2>Get listed</h2><a href="{% static 'website/home/images/fulls/06.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/06.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-2"><h2>Get listed</h2><a href="{% static 'website/home/images/fulls/07.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/07.jpg' %}" alt=""></a></article>
+								{% comment %}
+								<article class="item thumb span-2"><h2>The Spectators</h2><a href="{% static 'website/home/images/fulls/08.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/08.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-1"><h2>You really got me</h2><a href="{% static 'website/home/images/fulls/01.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/01.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-2"><h2>Ad Infinitum</h2><a href="{% static 'website/home/images/fulls/02.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/02.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-1"><h2>Different.</h2><a href="{% static 'website/home/images/fulls/03.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/03.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-2"><h2>Kingdom of the Wind</h2><a href="{% static 'website/home/images/fulls/05.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/05.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-1"><h2>Elysium</h2><a href="{% static 'website/home/images/fulls/04.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/04.jpg' %}" alt=""></a></article> 
+								{% endcomment %}
+
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<section>
+							<p>This is <strong>Parallelism</strong>, a responsive portfolio site template by <a href="http://html5up.net">HTML5 UP</a>. Free for personal
+							and commercial use under the <a href="http://html5up.net/license">Creative Commons Attribution</a> license.</p>
+						</section>
+						<section>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								{% comment %}
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> 
+								{% endcomment %}
+								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; REITs Ghana</li><li>Design: <a href="http://skylinewebservice.de">Skyline Webservice</a></li>
+							</ul>
+						</section>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'website/home/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'website/home/assets/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'website/home/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'website/home/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'website/home/assets/js/util.js' %}"></script>
+			<script src="{% static 'website/home/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

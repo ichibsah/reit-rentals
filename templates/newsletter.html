@@ -1,0 +1,98 @@
+{% load static %}
+
+{% comment %} 
+{% static 'website/newsletter/ css/animate.css' %}
+:url({%  static 'website/images/about.jpg'%});"
+{% url 'website:home' %} 
+{% endcomment %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'website/home/assets/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'website/newsletter/assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+		{% comment %}<div class="wrap">
+			<div class="container">
+				 <div class="row justify-content-between">
+						<div class="col-12 col-md d-flex align-items-center">
+							<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">{{cTel}}</a> oder <span class="mailus">email:</span> <a href="mailto://{{cEmail}}">{{cEmail}}</a></p>
+						</div>
+						 
+						<div class="col-12 col-md d-flex justify-content-md-end">
+							<div class="social-media">
+				    		<p class="mb-0 d-flex">
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+				    		</p>
+			        	</div>
+						
+						</div>
+				</div> 
+			</div>
+		</div>{% endcomment %}
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container">
+				<a class="navbar-brand" href="{% url 'website:home' %}">{{cName}} <span>{{cSlogan}}</span></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			  </button>
+			  <div class="collapse navbar-collapse" id="ftco-nav">
+				{% block navigation %}
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="{% url 'website:home' %}" class="nav-link">Rentals</a></li>
+					{% comment %}
+					<li class="nav-item"><a href="{% url 'website:details' %}" class="nav-link">Über uns</a></li>
+					<li class="nav-item"><a href="{% url 'website:details' %}" class="nav-link">Dienstleistung</a></li>
+					<li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+					<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> 
+					{% endcomment %}
+					<li class="nav-item active"><a href="{% url 'website:newsletter' %}" class="nav-link">Newsletters</a></li>
+					  <li class="nav-item"><a href="{% url 'website:contact' %}" class="nav-link">Contact</a></li>
+				</ul>
+				{% endblock navigation %}
+			  </div>
+			</div>
+		  </nav>
+		
+		<!-- END nav -->
+		<!-- Header -->
+			<header id="header">
+				<h1>Eventually</h1>
+				<p>A simple template for telling the world when you'll launch<br />
+				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				{% csrf_token %}
+				<input type="email" name="email" id="email" placeholder="Email Address" />
+				<input type="submit" value="Sign Up" name="singup" />
+			</form>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'website/newsletter/assets/js/js.cookie.min.js' %}"></script>
+			<script src="{% static 'website/newsletter/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
