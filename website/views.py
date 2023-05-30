@@ -6,6 +6,9 @@ from django.core.mail import send_mail
 from .import views
 from django.shortcuts import HttpResponse, render, redirect
 from django.http import JsonResponse
+from pathlib import Path
+import json
+from .models import NewsletterForm
 
 #from .forms import NameForm
 
@@ -24,29 +27,22 @@ class NewsletterView(TemplateView):
         if details.is_valid():
             post = details.save(commit=False)
             post.save()
-            #return JsonResponse({'status': 'failed', 'errors': details.errors})
-            return JsonResponse({'status': 'success'})
-            #return render(request, "newsletter.html", {'mSentSucess':'data submitted successfully'})
-            #return HttpResponse({'mSentSuccess': 'data submitted successfully'})
+            result = "Thank you"
+            return HttpResponse(result, status=200)
         else:
-            #return render(request, "newsletter.html", {'form': details})
-            #return JsonResponse({'status': 'failed', 'errors': details.errors}) #Debug
-            return JsonResponse({'status': 'failed'})
+            result = "Something went wrong. Please try again."
+            return HttpResponse(result, status=400)
     
     def get(self, request, *args, **kwargs):
         form = NewsletterForm(None)
         return render(request, 'newsletter.html', {'form': form})
     
-    
 class ContactView(TemplateView):
     template_name = "contact.html"
-
 
 class IndexView(TemplateView):
     template_name = "index.html"
         
-
-
 
 def signupform(request):
 

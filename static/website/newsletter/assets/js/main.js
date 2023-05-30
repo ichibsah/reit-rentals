@@ -174,49 +174,33 @@
 				// 		}, 750);
 
 				// });
-				$form.addEventListener('submit', function(event) {
-					// Remove this line in production.
-					//event.preventDefault();
-					
-					// Disable submit.
-					$submit.disabled = true;
-
+				var form = document.querySelector("#signup-form");
+				form.addEventListener("submit", function(event) {
+					event.preventDefault();
+					var formData = new FormData(form);
 					const csrfToken = Cookies.get('csrftoken'); // You need to include the `js-cookie` library to use this.
-				
-					// Process form.
-					fetch('', {
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-							'X-CSRFToken': csrfToken // Include the CSRF token in the header.
+					// You can add additional fields as needed.
+					formData.append('csrfmiddlewaretoken', csrfToken); // Include the CSRF token in the form data.
+					$form.reset();
+					$.ajax({
+						type: "POST",
+						url: window.location.href,
+						data: formData,
+						processData: false, // Do not process the FormData object.
+						contentType: false, // Do not set a content type header.
+						success: function(response) {
+							// handle the response from the Django view
+							$message._show('success', response);
+							//console.log(response);
 						},
-						body: JSON.stringify({
-							// Assume that the form fields have 'name' attributes that match the corresponding model fields.
-							email: $form.email.value,
-							//field_name_2: $form.field_name_2.value,
-							// Add additional fields as needed.
-						})
-					})
-					.then(response => response.ok ? response.json() : Promise.reject(response.status))
-					.then(data => {
-						// Reset form.
-						$form.reset();
-				
-						// Enable submit.
-						$submit.disabled = false;
-				
-						// Show success message.
-						$message._show('success', 'Thank you!');
-					})
-					.catch(error => {
-						// Enable submit.
-						$submit.disabled = false;
-				
-						// Show error message.
-						$message._show('failure', 'Something went wrong. Please try again.');
+						error: function(response) {
+							// handle the error
+							$message._show('failure', response.responseText);
+							//console.log(response);
+						}
 					});
 				});
-
+//
 		})();
 
 })();
