@@ -10,7 +10,7 @@ WORKDIR /code
 #CMD ["gunicorn", "--config", "gunicorn.conf.py", "dentist:website"]
 
 # Expose ports
-EXPOSE 8000
+EXPOSE 80
 
 # Expose volumes
 #VOLUME ["/etc/nginx/conf.d", "/var/log/nginx", "/www"]
