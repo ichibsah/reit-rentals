@@ -6,6 +6,61 @@
 
 (function($) {
 
+	// Vars.
+	var $form = document.querySelectorAll('#contact-form')[0],
+	$submit = document.querySelectorAll('#contact-form input[type="submit"]')[0],
+	$message;
+
+	// Bail if addEventListener isn't supported.
+	if (!('addEventListener' in $form))
+		return;
+
+	// Message.
+	$message = document.createElement('span');
+	$message.classList.add('message');
+	$form.appendChild($message);
+
+	$message._show = function(type, text) {
+
+	$message.innerHTML = text;
+	$message.classList.add(type);
+	$message.classList.add('visible');
+
+	window.setTimeout(function() {
+		$message._hide();
+	}, 3000);
+
+	};
+
+	$message._hide = function() {
+	$message.classList.remove('visible');
+	};
+
+	var form = document.querySelector("#contact-form");
+	form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    //const csrfToken = Cookies.get('csrftoken');
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", window.location.href);
+    //xhr.setRequestHeader("X-CSRFToken", csrfToken);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // handle the success response
+            $message._show('success', xhr.responseText);
+        } else {
+            // handle the error response
+            $message._show('failure', xhr.responseText);
+        }
+    };
+    xhr.onerror = function() {
+        // handle the error
+        console.error("Request failed.");
+    };
+    xhr.send(new FormData(form));
+    form.reset();
+	});
+
+
 	var	$window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
@@ -397,5 +452,7 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+
+			
 
 })(jQuery);

@@ -135,7 +135,7 @@
 
 					window.setTimeout(function() {
 						$message._hide();
-					}, 3000);
+					}, 9000);
 
 				};
 
@@ -174,33 +174,58 @@
 				// 		}, 750);
 
 				// });
+
+				/////////////////////
+				/////////////////////
+				// var form = document.querySelector("#signup-form");
+				// form.addEventListener("submit", function(event) {
+				// 	event.preventDefault();
+				// 	var formData = new FormData(form);
+				// 	const csrfToken = Cookies.get('csrftoken'); 
+				// 	formData.append('csrfmiddlewaretoken', csrfToken); // Include the CSRF token in the form data.
+				// 	$form.reset();
+				// 	$.ajax({
+				// 		type: "POST",
+				// 		url: window.location.href,
+				// 		data: formData,
+				// 		processData: false, // Do not process the FormData object.
+				// 		contentType: false, // Do not set a content type header.
+				// 		success: function(response) {
+				// 			// handle the response from the Django view
+				// 			$message._show('success', response);
+				// 			//console.log(response);
+				// 		},
+				// 		error: function(response) {
+				// 			// handle the error
+				// 			$message._show('failure', response.responseText);
+				// 			//console.log(response);
+				// 		}
+				// 	});
+				// });
 				var form = document.querySelector("#signup-form");
-				form.addEventListener("submit", function(event) {
-					event.preventDefault();
-					var formData = new FormData(form);
-					const csrfToken = Cookies.get('csrftoken'); // You need to include the `js-cookie` library to use this.
-					// You can add additional fields as needed.
-					formData.append('csrfmiddlewaretoken', csrfToken); // Include the CSRF token in the form data.
-					$form.reset();
-					$.ajax({
-						type: "POST",
-						url: window.location.href,
-						data: formData,
-						processData: false, // Do not process the FormData object.
-						contentType: false, // Do not set a content type header.
-						success: function(response) {
-							// handle the response from the Django view
-							$message._show('success', response);
-							//console.log(response);
-						},
-						error: function(response) {
+					form.addEventListener("submit", function(event) {
+						event.preventDefault();
+						const csrfToken = Cookies.get('csrftoken');
+						var xhr = new XMLHttpRequest();
+						xhr.open("POST", window.location.href);
+						xhr.setRequestHeader("X-CSRFToken", csrfToken);
+						xhr.onload = function() {
+							if (xhr.status === 200) {
+								// handle the success response
+								$message._show('success', xhr.responseText);
+							} else {
+								// handle the error response
+								$message._show('failure', xhr.responseText);
+							}
+						};
+						xhr.onerror = function() {
 							// handle the error
-							$message._show('failure', response.responseText);
-							//console.log(response);
-						}
+							console.error("Request failed.");
+						};
+						xhr.send(new FormData(form));
+						form.reset();
 					});
-				});
-//
+////////
 		})();
 
 })();

@@ -1,0 +1,47 @@
+{% extends "_base.html"%}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+
+{% else %}
+  <p>You are not logged in</p>
+
+{% endif %}
+{% endblock %}
+
+{% comment %} 
+{% static 'website/details/ css/animate.css' %}
+:url({%  static 'website/images/about.jpg'%});"
+{% url 'website:home' %} 
+{% endcomment %}
+
+{% url 'website:contact' %}
+
+<title>Rentals @ REITs in Ghana</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'website/home/assets/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'website/home/assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'website/home/assets/css/noscript.css' %}" /></noscript>
+
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="keywords">
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="description">
+		<meta property="og:title" content="Rentals @ REITs in Ghana" />
+		<meta property="og:description" content="Rentals @ REITs in Ghana" />
+		<meta property="og:url" content="https://rentals.reits-gh.com/" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:image" content="https://rentals.reits-gh.com/logo.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="REITs Ghana" />
+	
+
+        <p>Real Estate Investment Trusts<br />
+            Allows anyone to invest in real estate</p>
+
+
+			<li>&copy; REITs Ghana</li><li>Design: <a href="https://skylinewebservice.com">Skyline Webservice</a></li>

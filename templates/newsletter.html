@@ -10,11 +10,23 @@
 
 <html>
 	<head>
-		<title>Eventually by HTML5 UP</title>
+		<title>Rentals @ REITs in Ghana</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'website/home/assets/css/style.css' %}">
 		<link rel="stylesheet" href="{% static 'website/newsletter/assets/css/main.css' %}" />
+
+		
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="keywords">
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="description">
+		<meta property="og:title" content="Rentals @ REITs in Ghana" />
+		<meta property="og:description" content="Rentals @ REITs in Ghana" />
+		<meta property="og:url" content="https://rentals.reits-gh.com/" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:image" content="https://rentals.reits-gh.com/logo.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="REITs Ghana" />
+	
 	</head>
 	<body class="is-preload">
 		{% comment %}<div class="wrap">
@@ -65,9 +77,8 @@
 		<!-- END nav -->
 		<!-- Header -->
 			<header id="header">
-				<h1>Eventually</h1>
-				<p>A simple template for telling the world when you'll launch<br />
-				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+				<h1>Newsletters</h1>
+				<p>We would love to keep you informed about new listings! <br>Please leave us your email address, and we will send you updates as soon as we have new properties available.</p>
 			</header>
 
 		<!-- Signup Form -->
@@ -83,10 +94,10 @@
 					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="{% url 'website:contact' %}" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; REITs Ghana</li><li>Design: <a href="https://skylinewebservice.com">Skyline Webservice</a></li>
 				</ul>
 			</footer>
 

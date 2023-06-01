@@ -1,20 +1,24 @@
 {% load static %}
 
-{% comment %} 
-{% static 'website/details/ css/animate.css' %}
-:url({%  static 'website/images/about.jpg'%});"
-{% url 'website:home' %} 
-{% endcomment %}
-
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Lens by HTML5 UP</title>
+		<title>Rentals | Details @ REITs in Ghana</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'website/home/assets/css/style.css' %}">
 		<link rel="stylesheet" href="{% static 'website/details/assets/css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'website/details/assets/css/noscript.css' %}" /></noscript>
+
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="keywords">
+		<meta content="rent, rentals, Reits, Ghana, real estate, Investment, Trusts" name="description">
+		<meta property="og:title" content="Rentals @ REITs in Ghana" />
+		<meta property="og:description" content="Rentals @ REITs in Ghana" />
+		<meta property="og:url" content="https://rentals.reits-gh.com/" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:image" content="https://rentals.reits-gh.com/logo.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="REITs Ghana" />
 	</head>
 	<body class="is-preload-0 is-preload-1 is-preload-2">
 		<div id="viewer" class="wrap">
@@ -49,13 +53,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Rentals</h1>
-						<p>Just another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+						<h1>Rentals @ REITs</h1>
+						<p>NEWLY Built. 2 Rooms, 1 kitchen, 2 baths, 2 toilets, 1 terrace, 1 dining area, 2 parking space, 2 slip a/c, wifi, dstv, security fence, 5 min walk from KFC in Sakumono, Tema. €500 a month</p>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="{% url 'website:contact' %}" class="icon fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 					</header>
 
@@ -63,13 +67,13 @@
 					<section id="thumbnails">
 						<article>
 							<a class="thumbnail" href="{% static 'website/details/images/fulls/13.jpg' %}" data-position="left center"><img src="{% static 'website/details/images/thumbs/13.jpg' %}" alt="" /></a>
-							<h2>Diam tempus accumsan</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<h2>Before the extension was built</h2>
+							<p>As you may know, an extension was built before this unit became available for rent. However, as you will see in the next slide, the unit is completely detached, ensuring your own privacy and entrance to the space.</p>
 						</article>
 						<article>
-							<a class="thumbnail" href="{% static 'website/details/images/fulls/02.jpg' %}"><img src="{% static 'website/details/images/thumbs/02.jpg' %}" alt="" /></a>
-							<h2>Vivamus convallis libero</h2>
-							<p>Sed velit lacus, laoreet at venenatis convallis in lorem tincidunt.</p>
+							<a class="thumbnail" href="{% static 'website/details/images/fulls/frontviewpn.jpeg' %}"><img src="{% static 'website/details/images/fulls/frontviewpn.jpeg' %}" alt="" /></a>
+							<h2>The extension</h2>
+							<p>Front view , Potrait, North.</p>
 						</article>
 						<article>
 							<a class="thumbnail" href="{% static 'website/details/images/fulls/03.jpg' %}" data-position="top center"><img src="{% static 'website/details/images/thumbs/03.jpg' %}" alt="" /></a>
@@ -112,13 +116,13 @@
 							<p>Vestibulum ante ipsum primis in faucibus orci luctus ac tincidunt dolor.</p>
 						</article>
 						<article>
-							<a class="thumbnail" href="images/fulls/11.jpg"><img src="images/thumbs/11.jpg" alt="" /></a>
-							<h2>Pharetra ex non faucibus</h2>
+							<a class="thumbnail" href="{% static 'website/details/images/fulls/backview.jpeg' %}"><img src="{% static 'website/details/images/fulls/backview.jpeg' %}" alt="" /></a>
+							<h2>Back View</h2>
 							<p>Ut sed magna euismod leo laoreet congue. Fusce congue enim ultricies.</p>
 						</article>
 						<article>
-							<a class="thumbnail" href="images/fulls/12.jpg"><img src="images/thumbs/12.jpg" alt="" /></a>
-							<h2>Mattis lorem sodales</h2>
+							<a class="thumbnail" href="{% static 'website/details/images/fulls/floorplan.PNG' %}"><img src="{% static 'website/details/images/fulls/floorplan.PNG' %}" alt="" /></a>
+							<h2>Floor Plan</h2>
 							<p>Feugiat auctor leo massa, nec vestibulum nisl erat faucibus, rutrum nulla.</p>
 						</article>
 					</section>
@@ -126,7 +130,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+							<li>&copy; REITs Ghana |</li><li>Design: <a href="https://skylinewebservice.com">Skyline Webservice</a></li>
 						</ul>
 					</footer>
 

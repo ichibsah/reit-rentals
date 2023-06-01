@@ -92,19 +92,19 @@
 								</div>
 
 								<article class="item thumb span-1">
-									<h2>Get listed</h2>
-									<a href="{% static 'website/home/images/fulls/01.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/01.jpg' %}" alt=""></a>
+									<h2>Get listed...</h2>
+									<a href="{% url 'website:contact' %}"><img src="{% static 'website/home/images/thumbs/01.jpg' %}" alt=""></a>
 								</article>
 
 								<article class="item thumb span-2">
 									<h2>Spintext Road, Near KFC</h2>
 									{% comment %} <a href="{% url 'website:details' %} " class="image"><img src="{% static 'website/home/images/thumbs/09.jpg' %}" alt=""></a> {% endcomment %}
-									<a href="{% url 'website:details' %} " ><img src="{% static 'website/home/images/thumbs/09.jpg' %}" alt=""></a>
+									<a href="{% url 'website:details' %}"><img src="{% static 'website/home/images/thumbs/09.jpg' %}" alt=""></a>
 								</article>
 
 								<article class="item thumb span-1">
-									<h2>Get listed.</h2>
-									<a href="{% static 'website/home/images/fulls/03.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/03.jpg' %}" alt=""></a>
+									<h2>Get listed...</h2>
+									<a href="{% url 'website:contact' %}"><img src="{% static 'website/home/images/thumbs/03.jpg' %}" alt=""></a>
 								</article>
 
 								{% comment %}
@@ -139,15 +139,12 @@
 						<!-- Items -->
 							<div class="items">
 
-								<a href="{% url 'website:newsletter' %}">
-								<article class="item thumb span-3"><h2>Click here...</h2>
+								<article class="item thumb span-3"><h2>Click here to get notified of new listings...</h2>
 									{% comment %} <a href="{% static 'website/home/images/fulls/05.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/05.jpg' %}" alt=""></a> {% endcomment %}
-									
-									<h1>Click here to get notified on new listings</h1>
-									
-								</article></a>
-								<article class="item thumb span-1"><h2>Get listed</h2><a href="{% static 'website/home/images/fulls/06.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/06.jpg' %}" alt=""></a></article>
-								<article class="item thumb span-2"><h2>Get listed</h2><a href="{% static 'website/home/images/fulls/07.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/07.jpg' %}" alt=""></a></article>
+									<a href="{% url 'website:newsletter' %}"><img src="{% static 'website/home/images/thumbs/05.jpg' %}" alt=""></a>
+								</article>
+								<article class="item thumb span-1"><h2>Get listed...</h2><a href="{% url 'website:contact' %}"><img src="{% static 'website/home/images/thumbs/06.jpg' %}" alt=""></a></article>
+								<article class="item thumb span-2"><h2>Get listed...</h2><a href="{% url 'website:contact' %}"><img src="{% static 'website/home/images/thumbs/07.jpg' %}" alt=""></a></article>
 								{% comment %}
 								<article class="item thumb span-2"><h2>The Spectators</h2><a href="{% static 'website/home/images/fulls/08.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/08.jpg' %}" alt=""></a></article>
 								<article class="item thumb span-1"><h2>You really got me</h2><a href="{% static 'website/home/images/fulls/01.jpg' %}" class="image"><img src="{% static 'website/home/images/thumbs/01.jpg' %}" alt=""></a></article>
@@ -164,8 +161,9 @@
 				<!-- Footer -->
 					<section id="footer">
 						<section>
-							<p>This is <strong>Parallelism</strong>, a responsive portfolio site template by <a href="http://html5up.net">HTML5 UP</a>. Free for personal
-							and commercial use under the <a href="http://html5up.net/license">Creative Commons Attribution</a> license.</p>
+							<p><strong>Welcome to my rental listings!</strong>
+								These properties are available for rent and are also listed on <a href="http://airbnb.com">Airbnb</a>. You can find detailed information about each property on this page, and if you are interested in listing your own property, you can do so here.
+							</p>
 						</section>
 						<section>
 							<ul class="icons">
@@ -175,10 +173,10 @@
 								{% comment %}
 								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> 
 								{% endcomment %}
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+								<li><a href="{% url 'website:contact' %}" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; REITs Ghana</li><li>Design: <a href="http://skylinewebservice.de">Skyline Webservice</a></li>
+								<li>&copy; REITs Ghana</li><li>Design: <a href="http://skylinewebservice.com">Skyline Webservice</a></li>
 							</ul>
 						</section>
 					</section>
