@@ -21,7 +21,8 @@ urlpatterns = [
     path('contact.html', ContactView.as_view(), name='contact'),
     #path("accounts/", include(("django.contrib.auth.urls", 'accounts'), namespace='accounts')),  # new
 
-    path('signup.html', signupform, name = 'signup form'),
+    path('signup.html', SignupView.as_view(), name='signup'),
+    #path('signup.html', signupform, name = 'signup form'),
 
     path("sitemap.xml", sitemap,{"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap",),
 

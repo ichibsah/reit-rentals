@@ -1,7 +1,7 @@
 
 from django.forms import ModelForm
 from django import forms
-from .models import *
+#from .models import *
 
 from django.db import models
 
@@ -12,7 +12,7 @@ class Post(models.Model):
 	name = models.TextField(blank = False, null = False)
 	
 	# This is used to write a post
-	email = models.EmailField(blank = False, null = False, unique=True)
+	email = models.EmailField(blank = False, null = False, unique=False)
 	
 	# Values for gender are restricted by giving choices
 	message = models.TextField(blank = False, null = False)
