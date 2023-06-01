@@ -18,7 +18,7 @@
 
 git add .
 git commit -am "$(date)"
-#git push
+git push
 
 #…or push an existing repository from the command line
 #git remote add origin git@github.com:ichibsah/anasse.git
