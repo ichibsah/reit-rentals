@@ -1,12 +1,10 @@
 FROM python:3.9-slim-buster as stage-app
 
-COPY . .
-#COPY requirements.txt requirements.txt
+
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-
-RUN source ./venv/bin/activate
-
-#WORKDIR /code
+COPY . code
+WORKDIR /code
 #RUN python manage.py runserver
 
 #CMD ["gunicorn", "--config", "gunicorn.conf.py", "dentist:website"]
