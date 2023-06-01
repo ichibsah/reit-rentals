@@ -12,6 +12,10 @@ WORKDIR /code
 # Expose ports
 EXPOSE 8000
 
+# Expose volumes
+#VOLUME ["/etc/nginx/conf.d", "/var/log/nginx", "/www"]
+#VOLUME ["/etc/nginx/conf.d", "/var/log/nginx"]
+
 # runs the production server
 ENTRYPOINT ["python", "manage.py"]
 CMD ["runserver", "0.0.0.0:8000"]
