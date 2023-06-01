@@ -1,5 +1,6 @@
 #! /usr/bin/bash
 
+docker rm rentals -f
 docker build -t rentals:latest -t rentals:v1.0 . 
 #docker build -t rentals . 
 docker run -it -d -p 8000:80 --name rentals rentals:latest
