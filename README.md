@@ -9,7 +9,9 @@ apt-get install python3-venv
 python3 -m venv virtual
 
 source ./virtual/bin/activate
-# use deactivate
+
+source ./virtual/bin/deactivate
+
 
 pip freeze
 
@@ -26,7 +28,9 @@ python manage.py migrate
 
 python manage.py makemigrations
 
-# admin: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site
+admin: 
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site
+
 python3 manage.py createsuperuser
 
 edit
