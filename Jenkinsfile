@@ -17,6 +17,17 @@ pipeline {
                 pwd()
             }
         }
+        stage('BASH | Provisions') {
+            steps {
+                ansiColor('xterm') {
+                    bash'''
+                    apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+                    
+                    '''
+
+                }
+            }
+        }        
         stage('Ansible | Build Dockerfile') {
             steps {
                 ansiColor('xterm') {
