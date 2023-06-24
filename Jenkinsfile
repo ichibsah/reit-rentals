@@ -19,10 +19,7 @@ pipeline {
         }
         stage('Ansible | Build Dockerfile') {
             steps {
-                pwd()
-                dir('./') {
-                    ansiblePlaybook colorized: true, extras: '-vvvv', disableHostKeyChecking: true, inventory: 'host.yml', playbook: 'rent.yml', tags: 'build'
-                }
+                ansiblePlaybook extras: '-vvvv', inventory: 'host.yml', playbook: 'rent.yml', tags: 'build'
             }
         }
         stage('Ansible | Deploy Image') {
