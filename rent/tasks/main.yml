@@ -1,8 +1,31 @@
 ---
 #tasks file for rest
-- name: DOCKERS | Build Dockerfile
-  command: "docker build -t rentals:latest -t rentals:v1.0 ."
-  tags: build
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Install Docker Compose
+  apt:
+    name: docker-compose
+    state: present
+
+- name: Add user to Docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+
+- name: Copy Dockerfile
+  copy:
+    src: Dockerfile
+    dest: /home/{{ ansible_user }}/Dockerfile
+
+- name: Build Docker image
+  command: docker build -t rentals:latest -t rentals:v1.0 /home/{{ ansible_user }}/
+
+# - name: DOCKERS | Build Dockerfile
+#   command: "docker build -t rentals:latest -t rentals:v1.0 ."
+#   tags: build
 
 # - name: check for existence of our base image
 #   shell: "docker images | grep built-by-ansible | grep ex3"

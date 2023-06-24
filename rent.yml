@@ -10,5 +10,6 @@
   #become_user: root
   roles:
     - rent
+  tags: build
 
 # complete, tested and working
