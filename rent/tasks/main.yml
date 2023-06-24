@@ -1,0 +1,49 @@
+---
+# tasks file for rest
+- name: DOCKERS | Build Dockerfile
+  docker_image:
+    name:  DOCKERS | Build Dockerfile "{{ansible_hostname}}"
+    source: build 
+    build:  # not required. Specifies options used for building images.
+    dockerfile:  Dockerfile
+    state: present
+    tag: latest 
+    debug: True # not required. Debug mode
+  tags: build
+
+
+# - name: DOCKERS | Copy default docker files to "{{ansible_hostname}}"
+#   copy:
+#     src: "files/docker"
+#     dest: "/opt/"
+#     owner: ibrahim
+#     group: ibrahim
+#     mode: 0744
+#   when: ansible_os_family == 'Debian' and dkr_copy_def_files # ansible_hostname != 'virthost01' or ansible_hostname != '4a999ff' 
+
+# - name: DOCKERS | Copy extended docker files to target host
+#   copy:
+#     src: "files/a35a0d3/docker"
+#     dest: "/opt/"
+#     owner: ibrahim
+#     group: ibrahim
+#     mode: 0744
+#   when: ansible_os_family == 'Debian' and dkr_copy_etx_files # ansible_hostname == 'a35a0d3'
+
+# - name: DOCKERS | Copy Specific docker folder(s) to target host
+#   copy:
+#     src: "files/{{item.fldr}}/docker"
+#     dest: "/opt/"
+#     owner: ibrahim
+#     group: ibrahim
+#     mode: 0744
+#   with_items:
+#     "{{ dckr_fldr_lst }}"
+#   when: dckr_fldr_lst.0 is defined
+
+
+# command: touch "{{ item.item }}"
+#   with_items:
+#       - { item: "1" }
+#       - { item: "2" }
+#       - { item: "3" }

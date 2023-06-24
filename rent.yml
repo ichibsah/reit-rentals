@@ -1,0 +1,14 @@
+---
+- name: RENT | Initialisation - LOCALHOST
+  hosts: local
+  #ignore_errors: true
+  #ignore_unreachable: true
+  connection: local
+  # remote_user: root
+  remote_user: ibrahim
+  become: true
+  become_user: root
+  roles:
+    - rent
+
+# complete, tested and working
