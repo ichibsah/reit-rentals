@@ -19,7 +19,15 @@ pipeline {
         }
         stage('Ansible | Build Dockerfile') {
             steps {
-                ansiblePlaybook extras: '-vvvv', inventory: 'host.yml', playbook: 'rent.yml', tags: 'build'
+                ansiColor('xterm') {
+                    ansiblePlaybook(
+                        playbook: 'rent.yml',
+                        inventory: 'host.yml',
+                        tags: 'build',
+                        extras: '-vvvv',
+                        colorized: true
+                    )
+                }
             }
         }
         stage('Ansible | Deploy Image') {
