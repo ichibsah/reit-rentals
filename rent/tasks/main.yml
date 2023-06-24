@@ -1,15 +1,19 @@
 ---
 # tasks file for rest
 - name: DOCKERS | Build Dockerfile
-  docker_image:
-    name:  DOCKERS | Build Dockerfile "{{ansible_hostname}}"
-    source: build 
-    build:  # not required. Specifies options used for building images.
-    dockerfile:  Dockerfile
-    state: present
-    tag: latest 
-    debug: True # not required. Debug mode
+  shell: "docker build -t rentals:latest -t rentals:v1.0 ."
   tags: build
+
+# - name: DOCKERS | Build Dockerfile
+#   docker_image:
+#     name: rentals
+#     source: build 
+#     build:  # not required. Specifies options used for building images.
+#     dockerfile:  Dockerfile
+#     state: present
+#     tag: latest 
+#     debug: True # not required. Debug mode
+#   tags: build
 
 
 # - name: DOCKERS | Copy default docker files to "{{ansible_hostname}}"
