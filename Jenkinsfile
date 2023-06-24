@@ -20,7 +20,7 @@ pipeline {
         stage('BASH | Provisions') {
             steps {
                 ansiColor('xterm') {
-                    bash'''
+                    sh'''
                     apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
                     '''
