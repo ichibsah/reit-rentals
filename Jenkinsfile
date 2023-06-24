@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'local-agent-ansible'
+            label 'docker-agent-ansible'
             }
       }
     triggers {
@@ -22,7 +22,7 @@ pipeline {
                 ansiColor('xterm') {
                     bash'''
                     apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-                    
+
                     '''
 
                 }
