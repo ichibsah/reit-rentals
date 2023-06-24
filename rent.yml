@@ -4,9 +4,10 @@
   #ignore_errors: true
   #ignore_unreachable: true
   connection: local
+  gather_facts: yes
   # remote_user: root
   #remote_user: ibrahim
-  become: true
+  #become: true
   #become_user: root
   roles:
     - rent
