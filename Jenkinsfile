@@ -21,7 +21,7 @@ pipeline {
             steps {
                 pwd()
                 dir('./') {
-                    ansiblePlaybook becomeUser: 'ibrahim', colorized: true, disableHostKeyChecking: true, inventory: 'host.yml', playbook: 'rent.yml', sudoUser: 'ibrahim', tags: 'build'
+                    ansiblePlaybook becomeUser: 'ibrahim', colorized: true, disableHostKeyChecking: true, inventory: 'host.yml', playbook: 'rent.yml', tags: 'build'
                 }
             }
         }
