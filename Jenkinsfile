@@ -21,7 +21,7 @@ pipeline {
             steps {
                 ansiColor('xterm') {
                     sh '''
-                    apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+                    sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
                     '''
 
