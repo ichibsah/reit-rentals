@@ -11,22 +11,28 @@ pipeline {
         ANSIBLE_VAULT = ''
     }
     stages {
-        stage('GIT | Checkout code') {
+        stage('GIT | Checkout') {
             steps {
-                deleteDir()
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ichibsah/reit-rentals.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ichibsah/reit-rentals.git']])
+                pwd()
             }
         }
         stage('Ansible | Build Dockerfile') {
             steps {
-                dir('./reit-rentals') {
+                pwd()
+                dir('./') {
                     ansiblePlaybook becomeUser: 'ibrahim', colorized: true, disableHostKeyChecking: true, installation: 'Ansible2', inventory: 'host.yml', playbook: 'rent.yml', sudoUser: 'ibrahim', tags: 'build'
                 }
             }
         }
         stage('Ansible | Deploy Image') {
             steps {
-                //
+                echo "Testing.."
+                sh '''
+                #cd myapp
+                #python3 hello.py
+                #python3 hello.py --name=Brad
+                '''
             }
         }
             
